@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Tech Masters | MKCL KLiC Center</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+
+<style>
+*{margin:0;padding:0;box-sizing:border-box;font-family:Poppins,sans-serif}
+body{
+background:url('images/bg-tech.png') fixed center/cover;
+color:#fff;
+}
+.overlay{background:rgba(0,0,0,.75)}
+
+header{background:#0b1c2d}
+nav{max-width:1200px;margin:auto;display:flex;justify-content:space-between;align-items:center;padding:20px}
+nav a{color:#fff;text-decoration:none;margin-left:20px;font-weight:500}
+
+.banner img{width:100%;max-height:300px;object-fit:cover}
+
+section{max-width:1200px;margin:auto;padding:70px 20px}
+h1,h2,h3{color:#00e5ff}
+p{color:#e0e0e0}
+
+.btn{display:inline-block;margin:20px 10px;padding:14px 30px;border-radius:30px;
+background:#00bcd4;color:#000;text-decoration:none;font-weight:600}
+
+.card{
+background:rgba(255,255,255,.1);
+padding:30px;border-radius:16px;
+backdrop-filter:blur(6px)
+}
+
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:25px}
+
+.gallery img{
+width:100%;border-radius:14px;
+transition:.3s;
+}
+.gallery img:hover{transform:scale(1.05)}
+
+input,select,textarea{
+width:100%;padding:12px;margin-top:12px;
+border-radius:8px;border:none
+}
+
+button{
+padding:14px 25px;border:none;border-radius:30px;
+background:#00e5ff;color:#000;font-weight:600;cursor:pointer
+}
+
+iframe{width:100%;height:320px;border-radius:15px;border:none}
+
+.notice{
+background:rgba(255,215,0,.15);
+border-left:5px solid gold;
+padding:15px;margin-bottom:15px
+}
+
+.chatbot{
+position:fixed;bottom:20px;right:20px;
+background:#00e5ff;color:#000;
+padding:15px 22px;border-radius:50px;
+text-decoration:none;font-weight:700
+}
+
+footer{
+background:#000;color:#aaa;
+text-align:center;padding:20px
+}
+</style>
+</head>
+
+<body>
+
+<div class="overlay">
+
+<header>
+<nav>
+<h2>Tech Masters</h2>
+<div>
+<a href="#home">Home</a>
+<a href="#courses">Courses</a>
+<a href="#gallery">Gallery</a>
+<a href="#notice">Notices</a>
+<a href="#admission">Admission</a>
+<a href="#contact">Contact</a>
+</div>
+</nav>
+</header>
+
+<div class="banner">
+<img src="images/banner.png">
+</div>
+
+<section id="home">
+<h1>MKCL Certified KLiC Center</h1>
+<p>Tech Masters Training & Study Center, Ambajogai</p>
+<a class="btn" href="tel:7020725019">Call Now</a>
+</section>
+
+<section id="courses">
+<h1>KLiC Courses</h1>
+<div class="grid" id="courseList"></div>
+</section>
+
+<section id="gallery">
+<h1>Gallery</h1>
+<div class="grid gallery">
+<img src="images/g1.jpg"><img src="images/g2.jpg"><img src="images/g3.jpg">
+<img src="images/g4.jpg"><img src="images/g5.jpg"><img src="images/g6.jpg">
+<img src="images/g7.jpg"><img src="images/g8.jpg"><img src="images/g9.jpg">
+<img src="images/g10.jpg"><img src="images/g11.jpg"><img src="images/g12.jpg">
+<img src="images/g13.jpg"><img src="images/g14.jpg"><img src="images/g15.jpg">
+</div>
+</section>
+
+<section id="notice">
+<h1>Latest Notices</h1>
+<div class="notice">📢 New batches for KLiC Tally with GST starting soon</div>
+<div class="notice">📢 New batch for KLiC IT starting soon</div>
+<div class="notice">📢 Government certificate available after exam</div>
+<div class="notice">📢 Limited seats – enroll early</div>
+</section>
+
+<section id="admission">
+<h1>Admission via WhatsApp</h1>
+<div class="card">
+<input id="name" placeholder="Student Name">
+<input id="phone" placeholder="Mobile Number">
+<select id="course"></select>
+<br><br>
+<button onclick="sendWhatsApp()">Send Enquiry</button>
+</div>
+</section>
+
+<section id="contact">
+<h1>Contact Us</h1>
+<div class="grid">
+<div class="card">
+<form action="mailto:46210417@mkcl.org" method="post" enctype="text/plain">
+<input name="Name" placeholder="Your Name">
+<input name="Mobile" placeholder="Mobile">
+<textarea name="Message" placeholder="Message"></textarea>
+<br><br>
+<button type="submit">Send Email</button>
+</form>
+</div>
+
+<div class="card">
+<iframe src="https://maps.google.com/maps?q=Tech%20Masters%20Training%20Ambajogai&output=embed"></iframe>
+<p>
+Arish Colony, Mandi Bazar, Ambajogai<br>
+📞 7020725019
+</p>
+</div>
+</div>
+</section>
+
+<a class="chatbot" target="_blank"
+href="https://chatgpt.com/g/g-681067fad7bc81919d1ff44f82cb71a5-mkcl-klic-counsellor">
+💬 KLiC Chatbot
+</a>
+
+<footer>
+© 2025 Tech Masters Training & Study Center | MKCL Authorized
+</footer>
+
+</div>
+
+<script>
+const courses = [
+  { n: "KLiC Courses", l: "https://klic.mkcl.org/klic-courses" },
+  { n: "KLiC IT", l: "https://klic.mkcl.org/klic-courses/it" },
+  { n: "KLiC Advanced Excel", l: "https://klic.mkcl.org/klic-courses/advanced-excel" },
+  { n: "KLiC Tally Prime with GST", l: "https://klic.mkcl.org/klic-courses/tally-prime-with-gst" },
+  { n: "KLiC Web Designing", l: "https://klic.mkcl.org/klic-courses/web-designing" },
+  { n: "KLiC Video Editing", l: "https://klic.mkcl.org/klic-courses/video-editing" },
+  { n: "KLiC 3D Modelling", l: "https://klic.mkcl.org/klic-courses/3d-modelling" },
+  { n: "KLiC AutoCAD", l: "https://klic.mkcl.org/klic-courses/autocad" },
+  { n: "KLiC DTP (Adobe & CorelDraw)", l: "https://klic.mkcl.org/klic-courses/dtp-adobe-corel-draw" },
+  { n: "KLiC English", l: "https://klic.mkcl.org/klic-courses/english" },
+  { n: "KLiC Java", l: "https://klic.mkcl.org/klic-courses/java" },
+  { n: "KLiC Mobile App Development", l: "https://klic.mkcl.org/klic-courses/mobile-app-development" },
+  { n: "KLiC Photoshop", l: "https://klic.mkcl.org/klic-courses/photoshop" },
+  { n: "KLiC Python", l: "https://klic.mkcl.org/klic-courses/python" }
+];
+
+const list = document.getElementById("courseList");
+const sel = document.getElementById("course");
+
+courses.forEach(c => {
+  list.innerHTML += `
+    <div class="card">
+      <h3>${c.n}</h3>
+      <a class="btn" href="${c.l}" target="_blank">
+        View Course Details
+      </a>
+    </div>
+  `;
+  sel.innerHTML += `<option>${c.n}</option>`;
+});
+</script>
+
+
+</body>
+</html>
