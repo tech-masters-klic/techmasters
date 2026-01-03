@@ -13,7 +13,7 @@ body{
 background:url('images/bg-tech.png') fixed center/cover;
 color:#fff;
 }
-.overlay{background:rgba(0,0,0,.75)}
+.overlay{background:rgba(0,0,0,.75);min-height:100vh}
 
 header{background:#0b1c2d}
 nav{max-width:1200px;margin:auto;display:flex;justify-content:space-between;align-items:center;padding:20px}
@@ -25,8 +25,12 @@ section{max-width:1200px;margin:auto;padding:70px 20px}
 h1,h2,h3{color:#00e5ff}
 p{color:#e0e0e0}
 
-.btn{display:inline-block;margin:20px 10px;padding:14px 30px;border-radius:30px;
-background:#00bcd4;color:#000;text-decoration:none;font-weight:600}
+.btn{
+display:inline-block;margin:20px 10px;
+padding:14px 30px;border-radius:30px;
+background:#00bcd4;color:#000;
+text-decoration:none;font-weight:600
+}
 
 .card{
 background:rgba(255,255,255,.1);
@@ -34,7 +38,11 @@ padding:30px;border-radius:16px;
 backdrop-filter:blur(6px)
 }
 
-.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:25px}
+.grid{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
+gap:25px
+}
 
 .gallery img{
 width:100%;border-radius:14px;
@@ -75,7 +83,6 @@ text-align:center;padding:20px
 </head>
 
 <body>
-
 <div class="overlay">
 
 <header>
@@ -93,7 +100,7 @@ text-align:center;padding:20px
 </header>
 
 <div class="banner">
-<img src="images/banner.png">
+<img src="images/banner.png" alt="Tech Masters MKCL KLiC Center">
 </div>
 
 <section id="home">
@@ -140,6 +147,7 @@ text-align:center;padding:20px
 <section id="contact">
 <h1>Contact Us</h1>
 <div class="grid">
+
 <div class="card">
 <form action="mailto:46210417@mkcl.org" method="post" enctype="text/plain">
 <input name="Name" placeholder="Your Name">
@@ -157,6 +165,7 @@ Arish Colony, Mandi Bazar, Ambajogai<br>
 📞 7020725019
 </p>
 </div>
+
 </div>
 </section>
 
@@ -196,16 +205,31 @@ courses.forEach(c => {
   list.innerHTML += `
     <div class="card">
       <h3>${c.n}</h3>
-      <a class="btn" href="${c.l}" target="_blank">
-        View Course Details
-      </a>
+      <a class="btn" href="${c.l}" target="_blank">View Course Details</a>
     </div>
   `;
   sel.innerHTML += `<option>${c.n}</option>`;
 });
-</script>
 
+function sendWhatsApp(){
+  const name = document.getElementById("name").value.trim();
+  const phone = document.getElementById("phone").value.trim();
+  const course = document.getElementById("course").value;
+
+  if(name === "" || phone === ""){
+    alert("Please enter Student Name and Mobile Number");
+    return;
+  }
+
+  const msg =
+    "Hello Tech Masters Training Center,%0A" +
+    "Student Name: " + name + "%0A" +
+    "Mobile Number: " + phone + "%0A" +
+    "Interested Course: " + course;
+
+  window.open("https://wa.me/917020725019?text=" + msg, "_blank");
+}
+</script>
 
 </body>
 </html>
-
