@@ -130,10 +130,10 @@ text-align:center;padding:20px
 <h1>Admission via WhatsApp</h1>
 <div class="card">
 <input id="name" placeholder="Student Name">
-<input id="phone" placeholder="Mobile Number">
+<input id="phone" placeholder="Mobile Number" maxlength="10">
 <select id="course"></select>
 <br><br>
-<button onclick="sendWhatsApp()">Send Enquiry</button>
+<button type="button" onclick="sendWhatsApp()">Send Enquiry</button>
 </div>
 </section>
 
@@ -208,3 +208,4 @@ courses.forEach(c => {
 
 </body>
 </html>
+
